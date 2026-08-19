@@ -1,0 +1,112 @@
+<html>
+        <head>
+                <script src="script.js"></script>
+<style>
+td {text-align: center; color: white;}
+dialog {text-align: center;}
+.unknown  {background-color: darkgrey;}
+.criminal {background-color: darkred;}
+.innocent {background-color: darkgreen;}
+td.unknown div.clue {visibility: hidden;}
+</style>
+        </head>
+        <body>
+                <table>
+                        <tr>
+                                <td id='A1' class="unknown">
+                                        <div class="emoji">🧕</div>
+                                        <div class="name">Alia</div>
+                                        <div class="job">topologist</div>
+                                        <div class="clue">
+                                                Milton Keynes is lovely in November!
+                                        </div>
+                                </td>
+                                <td id='B1' class="unknown">
+                                        <div class="emoji">🥸</div>
+                                        <div class="name">Bruno</div>
+                                        <div class="job">noncommutative geometer</div>
+                                        <div class="clue">
+                                                There are a prime number of innocents in column B
+                                        </div>
+                                </td>
+                                <td id='C1' class="unknown">
+                                        <div class="emoji">👱‍♀️</div>
+                                        <div class="name">Claudia</div>
+                                        <div class="job">combinatorialist</div>
+                                        <div class="clue">
+                                                My favourite part of MathsJam is seeing my friends!
+                                        </div>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td id='A2' class="unknown">
+                                        <div class="emoji">😸</div>
+                                        <div class="name">Derek</div>
+                                        <div class="job">category theorist</div>
+                                        <div class="clue">
+                                                The two criminals in row 1 are connected
+                                        </div>
+                                </td>
+                                <td id='B2' class="unknown">
+                                        <div class="emoji">👩‍🚀</div>
+                                        <div class="name">Eilidh</div>
+                                        <div class="job">algebraic number theorist</div>
+                                        <div class="clue">
+                                                Iorwerth is one of two criminals in a corner
+                                        </div>
+                                </td>
+                                <td id='C2' class="criminal">
+                                        <div class="emoji">🕵️‍♂️</div>
+                                        <div class="name">Fearghas</div>
+                                        <div class="job">cryptologist</div>
+                                        <div class="clue">
+                                                Derek is one of two criminals in column A
+                                        </div>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td id='A3' class="unknown">
+                                        <div class="emoji">🪢</div>
+                                        <div class="name">Gosia</div>
+                                        <div class="job">knot theorist</div>
+                                        <div class="clue">
+                                                My favourite part of MathsJam is eating cake!
+                                        </div>
+                                </td>
+                                <td id='B3' class="unknown">
+                                        <div class="emoji">👨‍🏫</div>
+                                        <div class="name">Henry</div>
+                                        <div class="job">mathematical physicist</div>
+                                        <div class="clue">
+                                                My favourite part of MathsJam is the competition competition competition competition!
+                                        </div>
+                                </td>
+                                <td id='C3' class="unknown">
+                                        <div class="emoji">🧲</div>
+                                        <div class="name">Iorwerth</div>
+                                        <div class="job">magnetohydrodynamicist</div>
+                                        <div class="clue">
+                                                Who ever heard of a criminal mathematician?
+                                        </div>
+                                </td>
+                        </tr>
+                </table>
+                <dialog id='jaccuse'>
+                        <div id='emoji'></div>
+                        <div id='name'></div>
+                        <div id='job'></div>
+                        <button id='criminal'>Criminal</button>
+                        <button id='innocent'>Innocent</button>
+                        <button id='cancel'>Cancel</button>
+                </dialog>
+                <dialog id='disallowed'>
+                        <div>You can't prove that!</div>
+                        <button id='closeDisallowed'>Continue</button>
+                </dialog>
+                <dialog id='success'>
+                        <div>You have solved the mystery!</div>
+                        <div id="score"></div>
+                        <button commandfor="success" command="close">Hell yes I am the greatest detective in HISTORY</button>
+                </dialog>
+        </body>
+</html>
