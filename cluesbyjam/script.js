@@ -89,41 +89,18 @@ const puzzle = [
     ]
 ];
 
-const criminality = {
-    'A1': 'criminal',
-    'B1': 'criminal',
-    'C1': 'innocent',
-    'A2': 'criminal',
-    'B2': 'innocent',
-    'C2': 'criminal',
-    'A3': 'innocent',
-    'B3': 'innocent',
-    'C3': 'criminal',
-};
-
-const deps = {
-    'A1': ['B2', 'C2', 'A2'],
-    'B1': ['A2'],
-    'C1': ['B2', 'C2', 'A2'],
-    'A2': ['C2'],
-    'B2': ['B1'],
-    'C2': [],
-    'A3': ['B2', 'C2', 'A2'],
-    'B3': ['B1'],
-    'C3': ['B2'],
-};
-
+var suspects = {};
 var currentSuspect;
 var unsolved;
 var incorrect = 0;
 var unjustified = 0;
 
 function onClick() {
-    currentSuspect = this;
+    currentSuspect = suspects[this.id];
     var dialog = document.getElementById('jaccuse');
-    document.getElementById('emoji').innerText = this.children[0].innerText;
-    document.getElementById('name').innerText  = this.children[1].innerText;
-    document.getElementById('job').innerText   = this.children[2].innerText;
+    document.getElementById('emoji').innerText = currentSuspect.emoji;
+    document.getElementById('name').innerText  = currentSuspect.name;
+    document.getElementById('job').innerText   = currentSuspect.job;
     dialog.showModal();
 };
 
@@ -140,13 +117,13 @@ function success() {
 }
 
 function accuse(guilt) {
-    if (guilt != criminality[currentSuspect.id]) {
+    if (guilt != currentSuspect.criminal) {
         document.getElementById('jaccuse').close();
         document.getElementById('disallowed').showModal();
         incorrect++;
         return;
     }
-    for (const dep of deps[currentSuspect.id]) {
+    for (const dep of currentSuspect.deps) {
         if (document.getElementById(dep).classList.contains('unknown')) {
             document.getElementById('jaccuse').close();
             document.getElementById('disallowed').showModal();
@@ -154,9 +131,10 @@ function accuse(guilt) {
             return;
         }
     }
-    currentSuspect.classList.remove('unknown');
-    currentSuspect.classList.add(criminality[currentSuspect.id]);
-    currentSuspect.removeEventListener('click', onClick);
+    let card = document.getElementById(currentSuspect.id);
+    card.classList.remove('unknown');
+    card.classList.add(currentSuspect.criminal ? "criminal" : "innocent");
+    card.removeEventListener('click', onClick);
     document.getElementById('jaccuse').close();
     if (--unsolved == 0) {
         success();
@@ -164,11 +142,11 @@ function accuse(guilt) {
 }
 
 function criminal() {
-    accuse("criminal");
+    accuse(true);
 }
 
 function innocent() {
-    accuse("innocent");
+    accuse(false);
 }
 
 function cancel() {
@@ -191,6 +169,7 @@ function buildSuspectTable() {
                 rowText += `<div class="${prop}">${suspect[prop]}</div>\n`
             }
             rowText += "</td>";
+            suspects[suspect.id] = suspect;
         }
         rowText += "</tr>";
         tableText += rowText;
