@@ -12,6 +12,13 @@ td.unknown div.clue {visibility: hidden;}
 </style>
         </head>
         <body>
+                <form>
+                        <label for='puzzle'>Choose a puzzle:</label>
+                        <select name='puzzle' id='puzzles'>
+                                <option value='mathsjam'>MathsJam (3x3)</option>
+                        </select>
+                        <button id='load-puzzle'>Go!</button>
+                </form>
                 <table id="suspects">
                 </table>
                 <dialog id='jaccuse'>

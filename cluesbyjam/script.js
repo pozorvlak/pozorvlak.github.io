@@ -1,94 +1,3 @@
-const puzzle = [
-    [
-        {
-            "id": "A1",
-            "start": false,
-            "emoji": "🧕",
-            "name": "Alia",
-            "job": "topologist",
-            "clue": "Milton Keynes is lovely in November!",
-            "criminal": true,
-            "deps": ["B2", "C2", "A2"]
-        }, {
-            "id": "B1",
-            "start": false,
-            "emoji": "🥸",
-            "name": "Bruno",
-            "job": "noncommutative geometer",
-            "clue": "There are a prime number of innocents in column B",
-            "criminal": true,
-            "deps": ["A2"]
-        }, {
-            "id": "C1",
-            "start": false,
-            "emoji": "👱‍♀️",
-            "name": "Claudia",
-            "job": "combinatorialist",
-            "clue": "My favourite part of MathsJam is seeing my friends!",
-            "criminal": false,
-            "deps": ["B2", "C2", "A2"]
-        }
-    ], [
-        {
-            "id": "A2",
-            "start": false,
-            "emoji": "😸",
-            "name": "Derek",
-            "job": "category theorist",
-            "clue": "The two criminals in row 1 are connected",
-            "criminal": true,
-            "deps": ["C2"]
-        }, {
-            "id": "B2",
-            "start": false,
-            "emoji": "👩‍🚀",
-            "name": "Eilidh",
-            "job": "algebraic number theorist",
-            "clue": "Iorwerth is one of two criminals in a corner",
-            "criminal": false,
-            "deps": ["B1"]
-        }, {
-            "id": "C2",
-            "start": true,
-            "emoji": "🕵️‍♂️",
-            "name": "Fearghas",
-            "job": "cryptologist",
-            "clue": "Derek is one of two criminals in column A",
-            "criminal": true,
-            "deps": []
-        }
-    ], [
-        {
-            "id": "A3",
-            "start": false,
-            "emoji": "🪢",
-            "name": "Gosia",
-            "job": "knot theorist",
-            "clue": "My favourite part of MathsJam is eating cake!",
-            "criminal": false,
-            "deps": ["B2", "C2", "A2"]
-        }, {
-            "id": "B3",
-            "start": false,
-            "emoji": "👨‍🏫",
-            "name": "Henry",
-            "job": "mathematical physicist",
-            "clue": "My favourite part of MathsJam is the competition competition competition competition!",
-            "criminal": false,
-            "deps": ["B1"]
-        }, {
-            "id": "C3",
-            "start": false,
-            "emoji": "🧲",
-            "name": "Iorwerth",
-            "job": "magnetohydrodynamicist",
-            "clue": "Who ever heard of a criminal mathematician?",
-            "criminal": true,
-            "deps": ["B2"]
-        }
-    ]
-];
-
 var suspects = {};
 var currentSuspect;
 var unsolved;
@@ -157,7 +66,7 @@ function closeDisallowed() {
     document.getElementById('disallowed').close();
 }
 
-function buildSuspectTable() {
+function buildSuspectTable(puzzle) {
     let table = document.getElementById('suspects');
     let tableText = "";
     for (const row of puzzle) {
@@ -177,8 +86,8 @@ function buildSuspectTable() {
     table.innerHTML = tableText;
 }
 
-window.onload = function() {
-    buildSuspectTable();
+function renderPuzzle(puzzle) {
+    buildSuspectTable(puzzle);
     var unknownEntries = document.querySelectorAll('td.unknown');
     unsolved = unknownEntries.length;
     for (const td of unknownEntries) {
@@ -188,5 +97,20 @@ window.onload = function() {
     document.getElementById('innocent').addEventListener('click', innocent);
     document.getElementById('cancel').addEventListener('click', cancel);
     document.getElementById('closeDisallowed').addEventListener('click', closeDisallowed);
-};
+}
 
+function loadPuzzle(puzzleName) {
+    const jsonFile = 'puzzles/' + puzzleName + '.json';
+    console.log('Loading JSON file ' + jsonFile);
+    fetch(jsonFile)
+        .then(response => response.json())
+        .then(json => renderPuzzle(json));
+}
+
+window.onload = function() {
+    const paramsString = window.location.search;
+    const searchParams = new URLSearchParams(paramsString);
+    if (searchParams.has("puzzle")) {
+        loadPuzzle(searchParams.get("puzzle"));
+    }
+};
