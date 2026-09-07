@@ -6,8 +6,8 @@
             "emoji": "🩸",
             "name": "Aaron",
             "job": "venepuncturist",
-            "clue": "Both criminals in column A are connected",
-            "criminal": false,
+            "clue": "Both the guilty in column A are connected",
+            "guilty": false,
             "deps": ["B2"]
         }, {
             "id": "B1",
@@ -16,7 +16,7 @@
             "name": "Beth",
             "job": "vampire",
             "clue": "Helga has more innocent neighbours than Iwona",
-            "criminal": true,
+            "guilty": true,
             "deps": ["C1"]
         }, {
             "id": "C1",
@@ -24,8 +24,8 @@
             "emoji": "⚡",
             "name": "Clive",
             "job": "big",
-            "clue": "Every row has at least one criminal",
-            "criminal": false,
+            "clue": "Every row has at least one guilty member",
+            "guilty": false,
             "deps": ["A1", "B2"]
         }
     ], [
@@ -36,7 +36,7 @@
             "name": "Daisy",
             "job": "cow",
             "clue": "There are more innocents in column C than in any other column",
-            "criminal": true,
+            "guilty": true,
             "deps": ["A1"]
         }, {
             "id": "B2",
@@ -45,7 +45,7 @@
             "name": "Errol",
             "job": "dragon",
             "clue": "Aaron is one of Beth's three innocent neighbours",
-            "criminal": true,
+            "guilty": true,
             "deps": []
         }, {
             "id": "C2",
@@ -54,7 +54,7 @@
             "name": "Felicity",
             "job": "dragon",
             "clue": "Or maybe set insurance fires?",
-            "criminal": false,
+            "guilty": false,
             "deps": ["A1", "B2"]
         }
     ], [
@@ -64,8 +64,8 @@
             "emoji": "🐉",
             "name": "Graham",
             "job": "",
-            "clue": "You'd think that a criminal dragon would do smash-and grab raids...",
-            "criminal": true,
+            "clue": "You'd think that a guilty dragon would do smash-and grab raids...",
+            "guilty": true,
             "deps": ["A1"]
         }, {
             "id": "B3",
@@ -74,7 +74,7 @@
             "name": "Helga",
             "job": "",
             "clue": "But actually, we're a crew of long-con confidence tricksters!",
-            "criminal": true,
+            "guilty": true,
             "deps": ["B1"]
         }, {
             "id": "C3",
@@ -83,7 +83,7 @@
             "name": "Iwona",
             "job": "vampire",
             "clue": "I've mortgaged my castle to invest in Ripov & Burnham, and I'm expecting a 400x return!",
-            "criminal": false,
+            "guilty": false,
             "deps": ["B1"]
         }
     ]

@@ -26,7 +26,7 @@ function success() {
 }
 
 function accuse(guilt) {
-    if (guilt != currentSuspect.criminal) {
+    if (guilt != currentSuspect.guilty) {
         document.getElementById('jaccuse').close();
         document.getElementById('disallowed').showModal();
         incorrect++;
@@ -42,7 +42,7 @@ function accuse(guilt) {
     }
     let card = document.getElementById(currentSuspect.id);
     card.classList.remove('unknown');
-    card.classList.add(currentSuspect.criminal ? "criminal" : "innocent");
+    card.classList.add(currentSuspect.guilty ? "guilty" : "innocent");
     card.removeEventListener('click', onClick);
     document.getElementById('jaccuse').close();
     if (--unsolved == 0) {
@@ -50,7 +50,7 @@ function accuse(guilt) {
     }
 }
 
-function criminal() {
+function guilty() {
     accuse(true);
 }
 
@@ -80,7 +80,7 @@ function buildSuspectTable(puzzle) {
     for (const row of puzzle) {
         let rowText = `<tr>\n<th scope='row'>${rowID++}</th>\n`;
         for (const suspect of row) {
-            let className = suspect.start ? (suspect.criminal ? "criminal" : "innocent") : "unknown";
+            let className = suspect.start ? (suspect.guilty ? "guilty" : "innocent") : "unknown";
             rowText +=  `<td id=${suspect.id} class=${className}>\n`;
             for (const prop of ["emoji", "name", "job", "clue"]) {
                 rowText += `<div class="${prop}">${suspect[prop]}</div>\n`
@@ -101,7 +101,7 @@ function renderPuzzle(puzzle) {
     for (const td of unknownEntries) {
         td.addEventListener('click', onClick);
     }
-    document.getElementById('criminal').addEventListener('click', criminal);
+    document.getElementById('guilty').addEventListener('click', guilty);
     document.getElementById('innocent').addEventListener('click', innocent);
     document.getElementById('cancel').addEventListener('click', cancel);
     document.getElementById('closeDisallowed').addEventListener('click', closeDisallowed);
