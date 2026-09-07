@@ -69,8 +69,16 @@ function closeDisallowed() {
 function buildSuspectTable(puzzle) {
     let table = document.getElementById('suspects');
     let tableText = "";
+    let numCols = puzzle[0].length;
+    let headerRow = "<tr><th scope='col' style='width: 1em'></th>\n";
+    for (let col of "ABCDEFGHIJKLMNOPQRSTUVWXYZ".slice(0, numCols)) {
+        headerRow += `<th scope='col'>${col}</th>\n`;
+    }
+    headerRow += "</tr>\n";
+    tableText += headerRow;
+    var rowID = 1;
     for (const row of puzzle) {
-        let rowText = "<tr>\n";
+        let rowText = `<tr>\n<th scope='row'>${rowID++}</th>\n`;
         for (const suspect of row) {
             let className = suspect.start ? (suspect.criminal ? "criminal" : "innocent") : "unknown";
             rowText +=  `<td id=${suspect.id} class=${className}>\n`;
