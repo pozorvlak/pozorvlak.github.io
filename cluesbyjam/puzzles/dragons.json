@@ -1,0 +1,90 @@
+[
+    [
+        {
+            "id": "A1",
+            "start": false,
+            "emoji": "🩸",
+            "name": "Aaron",
+            "job": "venepuncturist",
+            "clue": "Both criminals in column A are connected",
+            "criminal": false,
+            "deps": ["B2"]
+        }, {
+            "id": "B1",
+            "start": false,
+            "emoji": "🧛‍♀️",
+            "name": "Beth",
+            "job": "vampire",
+            "clue": "Helga has more innocent neighbours than Iwona",
+            "criminal": true,
+            "deps": ["C1"]
+        }, {
+            "id": "C1",
+            "start": false,
+            "emoji": "⚡",
+            "name": "Clive",
+            "job": "big",
+            "clue": "Every row has at least one criminal",
+            "criminal": false,
+            "deps": ["A1", "B2"]
+        }
+    ], [
+        {
+            "id": "A2",
+            "start": false,
+            "emoji": "🐄",
+            "name": "Daisy",
+            "job": "cow",
+            "clue": "There are more innocents in column C than in any other column",
+            "criminal": true,
+            "deps": ["A1"]
+        }, {
+            "id": "B2",
+            "start": true,
+            "emoji": "🐉",
+            "name": "Errol",
+            "job": "dragon",
+            "clue": "Aaron is one of Beth's three innocent neighbours",
+            "criminal": true,
+            "deps": []
+        }, {
+            "id": "C2",
+            "start": false,
+            "emoji": "🐉",
+            "name": "Felicity",
+            "job": "dragon",
+            "clue": "Or maybe set insurance fires?",
+            "criminal": false,
+            "deps": ["A1", "B2"]
+        }
+    ], [
+        {
+            "id": "A3",
+            "start": false,
+            "emoji": "🐉",
+            "name": "Graham",
+            "job": "",
+            "clue": "You'd think that a criminal dragon would do smash-and grab raids...",
+            "criminal": true,
+            "deps": ["A1"]
+        }, {
+            "id": "B3",
+            "start": false,
+            "emoji": "🐉",
+            "name": "Helga",
+            "job": "",
+            "clue": "But actually, we're a crew of long-con confidence tricksters!",
+            "criminal": true,
+            "deps": ["B1"]
+        }, {
+            "id": "C3",
+            "start": false,
+            "emoji": "🧛‍♀️",
+            "name": "Iwona",
+            "job": "vampire",
+            "clue": "I've mortgaged my castle to invest in Ripov & Burnham, and I'm expecting a 400x return!",
+            "criminal": false,
+            "deps": ["B1"]
+        }
+    ]
+]
