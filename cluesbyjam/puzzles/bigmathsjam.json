@@ -1,0 +1,155 @@
+[
+    [
+        {
+            "id": "A1",
+            "start": false,
+            "emoji": "",
+            "name": "Andrew",
+            "job": "MathsJammer",
+            "clue": "Sometimes I'm made of paper",
+            "guilty": true,
+            "deps": ["B1", "C3"]
+        }, {
+            "id": "B1",
+            "start": false,
+            "emoji": "",
+            "name": "Ben",
+            "job": "",
+            "clue": "Both criminals in row 3 are connected",
+            "guilty": false,
+            "deps": ["B2"]
+        }, {
+            "id": "C1",
+            "start": false,
+            "emoji": "",
+            "name": "Callum",
+            "job": "",
+            "clue": "All criminals in column C are connected",
+            "guilty": true,
+            "deps": ["B1", "C3"]
+        }, {
+            "id": "D1",
+            "start": false,
+            "emoji": "",
+            "name": "Christian",
+            "job": "",
+            "clue": "Sam has two criminal neighbours",
+            "guilty": true,
+            "deps": ["B1", "C3"]
+        }
+    ], [
+        {
+            "id": "A2",
+            "start": false,
+            "emoji": "",
+            "name": "Claire",
+            "job": "",
+            "clue": "All three innocents in column A are connected",
+            "guilty": false,
+            "deps": ["B2"]
+        }, {
+            "id": "B2",
+            "start": true,
+            "emoji": "",
+            "name": "Colin",
+            "job": "",
+            "clue": "Andrew has 2 innocent neighbours",
+            "guilty": false,
+            "deps": []
+        }, {
+            "id": "C2",
+            "start": true,
+            "emoji": "🐉",
+            "name": "Dominika",
+            "job": "",
+            "clue": "Sometimes I'm made of logs",
+            "guilty": true,
+            "deps": ["C1"]
+        }, {
+            "id": "D2",
+            "start": false,
+            "emoji": "👩‍🚀",
+            "name": "Hannah",
+            "job": "",
+            "clue": "Sometimes I'm made of traffic",
+            "guilty": false,
+            "deps": ["A4", "D1", "A3"]
+        }
+    ], [
+        {
+            "id": "A3",
+            "start": false,
+            "emoji": "",
+            "name": "Izzy",
+            "job": "",
+            "clue": "There are two criminals on the edges with an innocent directly above them",
+            "guilty": false,
+            "deps": ["A2"]
+        }, {
+            "id": "B3",
+            "start": false,
+            "emoji": "✈️",
+            "name": "Jen",
+            "job": "",
+            "clue": "There are a prime number of criminals in row 4",
+            "guilty": false,
+            "deps": ["A3", "B1"]
+        }, {
+            "id": "C3",
+            "start": false,
+            "emoji": "",
+            "name": "John",
+            "job": "",
+            "clue": "There are more criminals in row 1 than in any other row",
+            "guilty": true,
+            "deps": ["B1", "A2"]
+        }, {
+            "id": "D3",
+            "start": false,
+            "emoji": "",
+            "name": "Katie",
+            "job": "",
+            "clue": "Sometimes I'm made of music",
+            "guilty": true,
+            "deps": ["A4", "D1"]
+        }
+    ], [
+        {
+            "id": "A4",
+            "start": false,
+            "emoji": "🧑‍🦱",
+            "name": "Max",
+            "job": "",
+            "clue": "The number of criminals in column C is the tenth digit of pi",
+            "guilty": false,
+            "deps": ["A2", "C3"]
+        }, {
+            "id": "B4",
+            "start": false,
+            "emoji": "🧗",
+            "name": "Miles",
+            "job": "",
+            "clue": "Sometimes I'm made of hands",
+            "guilty": false,
+            "deps": ["A3", "B1"]
+        }, {
+            "id": "C4",
+            "start": false,
+            "emoji": "",
+            "name": "Peter",
+            "job": "",
+            "clue": "Sometimes I'm made with radio waves",
+            "guilty": true,
+            "deps": ["A4"]
+        }, {
+            "id": "D4",
+            "start": false,
+            "emoji": "👩‍🎤",
+            "name": "Sam",
+            "job": "",
+            "clue": "Sometimes I'm made of maths",
+            "guilty": true,
+            "deps": ["B3"]
+        }
+    ]
+]
