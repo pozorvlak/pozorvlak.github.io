@@ -3,7 +3,7 @@
         {
             "id": "A1",
             "start": false,
-            "emoji": "",
+            "emoji": "🎨",
             "name": "Andrew",
             "job": "",
             "clue": "Sometimes I'm made of paper",
@@ -12,7 +12,7 @@
         }, {
             "id": "B1",
             "start": false,
-            "emoji": "",
+            "emoji": "🚲",
             "name": "Ben",
             "job": "",
             "clue": "Both criminals in row 3 are connected",
@@ -30,7 +30,7 @@
         }, {
             "id": "D1",
             "start": false,
-            "emoji": "",
+            "emoji": "🦣",
             "name": "Christian",
             "job": "",
             "clue": "Sam has two criminal neighbours",
@@ -41,7 +41,7 @@
         {
             "id": "A2",
             "start": false,
-            "emoji": "",
+            "emoji": "🐕",
             "name": "Claire",
             "job": "",
             "clue": "All three innocents in column A are connected",
@@ -50,7 +50,7 @@
         }, {
             "id": "B2",
             "start": true,
-            "emoji": "",
+            "emoji": "🤹",
             "name": "Colin",
             "job": "",
             "clue": "Andrew has 2 innocent neighbours",
@@ -68,7 +68,7 @@
         }, {
             "id": "D2",
             "start": false,
-            "emoji": "👩‍🚀",
+            "emoji": "👩",
             "name": "Hannah",
             "job": "",
             "clue": "Sometimes I'm made of traffic",
@@ -79,7 +79,7 @@
         {
             "id": "A3",
             "start": false,
-            "emoji": "",
+            "emoji": "👩‍🦰",
             "name": "Izzy",
             "job": "",
             "clue": "There are two criminals on the edges with an innocent directly above them",
