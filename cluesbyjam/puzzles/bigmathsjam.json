@@ -58,7 +58,7 @@
             "deps": []
         }, {
             "id": "C2",
-            "start": true,
+            "start": false,
             "emoji": "🐉",
             "name": "Dominika",
             "job": "",
@@ -130,7 +130,7 @@
             "name": "Miles",
             "job": "",
             "clue": "Sometimes I'm made of hands",
-            "guilty": false,
+            "guilty": true,
             "deps": ["A3", "B1"]
         }, {
             "id": "C4",
@@ -139,7 +139,7 @@
             "name": "Peter",
             "job": "",
             "clue": "Sometimes I'm made with radio waves",
-            "guilty": true,
+            "guilty": false,
             "deps": ["A4"]
         }, {
             "id": "D4",
