@@ -80,7 +80,9 @@ function buildSuspectTable(puzzle) {
     for (const row of puzzle) {
         let rowText = `<tr>\n<th scope='row'>${rowID++}</th>\n`;
         for (const suspect of row) {
-            let className = suspect.start ? (suspect.guilty ? "guilty" : "innocent") : "unknown";
+            let className = suspect.start ?
+                (suspect.hasOwnProperty("guilty") ? (suspect.guilty ? "guilty" : "innocent") : "unset") :
+                "unknown";
             rowText +=  `<td id=${suspect.id} class=${className}>\n`;
             for (const prop of ["emoji", "name", "job", "clue"]) {
                 rowText += `<div class="${prop}">${suspect[prop]}</div>\n`

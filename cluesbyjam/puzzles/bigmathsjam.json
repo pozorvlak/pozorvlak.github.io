@@ -54,7 +54,6 @@
             "name": "Colin",
             "job": "",
             "clue": "Andrew has 2 innocent neighbours",
-            "guilty": true,
             "deps": []
         }, {
             "id": "C2",
