@@ -50,8 +50,8 @@
         }, {
             "id": "B2",
             "start": true,
-            "emoji": "🤹",
-            "name": "Colin",
+            "emoji": "",
+            "name": "",
             "job": "",
             "clue": "Andrew has 2 innocent neighbours",
             "deps": []
