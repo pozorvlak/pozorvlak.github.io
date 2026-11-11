@@ -8,7 +8,7 @@
             "job": "",
             "clue": "Sometimes I'm made of paper",
             "guilty": true,
-            "deps": [["B1", "C3"]]
+            "deps": [["C3"]]
         }, {
             "id": "B1",
             "start": false,
@@ -17,7 +17,7 @@
             "job": "",
             "clue": "Both criminals in row 3 are connected",
             "guilty": false,
-            "deps": [["B2"]]
+            "deps": [[]]
         }, {
             "id": "C1",
             "start": false,
@@ -26,7 +26,7 @@
             "job": "",
             "clue": "All criminals in column C are connected",
             "guilty": true,
-            "deps": [["B1", "C3"]]
+            "deps": [["C3"]]
         }, {
             "id": "D1",
             "start": false,
@@ -35,7 +35,7 @@
             "job": "",
             "clue": "Sam has two criminal neighbours",
             "guilty": true,
-            "deps": [["B1", "C3"]]
+            "deps": [["C3"]]
         }
     ], [
         {
@@ -46,7 +46,7 @@
             "job": "",
             "clue": "All three innocents in column A are connected",
             "guilty": false,
-            "deps": [["B2"]]
+            "deps": [[]]
         }, {
             "id": "B2",
             "start": true,
@@ -63,7 +63,7 @@
             "job": "",
             "clue": "Sometimes I'm made of logs",
             "guilty": true,
-            "deps": [["C1"]]
+            "deps": [["C1", "C3"]]
         }, {
             "id": "D2",
             "start": false,
@@ -72,7 +72,7 @@
             "job": "",
             "clue": "Sometimes I'm made of traffic",
             "guilty": false,
-            "deps": [["A4", "D1", "A3"]]
+            "deps": [["A3", "A4", "D1", "D3"]]
         }
     ], [
         {
@@ -92,7 +92,7 @@
             "job": "",
             "clue": "There are a prime number of criminals in row 4",
             "guilty": false,
-            "deps": [["A3", "B1"]]
+            "deps": [["A3", "A4", "C3"]]
         }, {
             "id": "C3",
             "start": false,
@@ -101,7 +101,7 @@
             "job": "",
             "clue": "There are more criminals in row 1 than in any other row",
             "guilty": true,
-            "deps": [["B1", "A2"]]
+            "deps": [["B1", "A3"]]
         }, {
             "id": "D3",
             "start": false,
@@ -110,7 +110,7 @@
             "job": "",
             "clue": "Sometimes I'm made of music",
             "guilty": true,
-            "deps": [["A4", "D1"]]
+            "deps": [["C4", "D1"], ["B1", "B3"]]
         }
     ], [
         {
@@ -121,7 +121,7 @@
             "job": "",
             "clue": "The number of criminals in column C is the tenth digit of pi",
             "guilty": false,
-            "deps": [["A2", "C3"]]
+            "deps": [["A1", "A2"]]
         }, {
             "id": "B4",
             "start": false,
@@ -130,7 +130,7 @@
             "job": "",
             "clue": "Sometimes I'm made of hands",
             "guilty": true,
-            "deps": [["A3", "B1"]]
+            "deps": [["A3", "A4", "C3"]]
         }, {
             "id": "C4",
             "start": false,
@@ -139,7 +139,7 @@
             "job": "",
             "clue": "Sometimes I'm made with radio waves",
             "guilty": false,
-            "deps": [["A4"]]
+            "deps": [["D1", "D3"], ["A4", "C2"]]
         }, {
             "id": "D4",
             "start": false,
@@ -148,7 +148,7 @@
             "job": "",
             "clue": "Sometimes I'm made of maths",
             "guilty": true,
-            "deps": [["B3"]]
+            "deps": [["A4", "B3", "B4", "C4"]]
         }
     ]
 ]
