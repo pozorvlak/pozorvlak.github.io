@@ -8,7 +8,7 @@
             "job": "topologist",
             "clue": "Milton Keynes is lovely in November!",
             "guilty": true,
-            "deps": ["B2", "C2", "A2"]
+            "deps": [["B2", "C2", "A2"]]
         }, {
             "id": "B1",
             "start": false,
@@ -17,7 +17,7 @@
             "job": "noncommutative geometer",
             "clue": "There are a prime number of innocents in column B",
             "guilty": true,
-            "deps": ["A2"]
+            "deps": [["A2"]]
         }, {
             "id": "C1",
             "start": false,
@@ -26,7 +26,7 @@
             "job": "combinatorialist",
             "clue": "My favourite part of MathsJam is seeing my friends!",
             "guilty": false,
-            "deps": ["B2", "C2", "A2"]
+            "deps": [["B2", "C2", "A2"]]
         }
     ], [
         {
@@ -37,7 +37,7 @@
             "job": "category theorist",
             "clue": "The two guilty in row 1 are connected",
             "guilty": true,
-            "deps": ["C2"]
+            "deps": [["C2"]]
         }, {
             "id": "B2",
             "start": false,
@@ -46,7 +46,7 @@
             "job": "algebraic number theorist",
             "clue": "Iorwerth is one of two guilty in a corner",
             "guilty": false,
-            "deps": ["B1"]
+            "deps": [["B1"]]
         }, {
             "id": "C2",
             "start": true,
@@ -55,7 +55,7 @@
             "job": "cryptologist",
             "clue": "Derek is one of two guilty in column A",
             "guilty": true,
-            "deps": []
+            "deps": [[]]
         }
     ], [
         {
@@ -66,7 +66,7 @@
             "job": "knot theorist",
             "clue": "My favourite part of MathsJam is eating cake!",
             "guilty": false,
-            "deps": ["B2", "C2", "A2"]
+            "deps": [["B2", "C2", "A2"]]
         }, {
             "id": "B3",
             "start": false,
@@ -75,7 +75,7 @@
             "job": "mathematical physicist",
             "clue": "My favourite part of MathsJam is the competition competition competition competition!",
             "guilty": false,
-            "deps": ["B1"]
+            "deps": [["B1"]]
         }, {
             "id": "C3",
             "start": false,
@@ -84,7 +84,7 @@
             "job": "magnetohydrodynamicist",
             "clue": "Who ever heard of a guilty mathematician?",
             "guilty": true,
-            "deps": ["B2"]
+            "deps": [["B2"]]
         }
     ]
 ]

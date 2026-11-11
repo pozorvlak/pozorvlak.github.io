@@ -8,7 +8,7 @@
             "job": "venepuncturist",
             "clue": "Both the guilty in column A are connected",
             "guilty": false,
-            "deps": ["B2"]
+            "deps": [["B2"]]
         }, {
             "id": "B1",
             "start": false,
@@ -17,7 +17,7 @@
             "job": "vampire",
             "clue": "Helga has more innocent neighbours than Iwona",
             "guilty": true,
-            "deps": ["C1"]
+            "deps": [["C1"]]
         }, {
             "id": "C1",
             "start": false,
@@ -26,7 +26,7 @@
             "job": "big",
             "clue": "Every row has at least one guilty member",
             "guilty": false,
-            "deps": ["A1", "B2"]
+            "deps": [["A1", "B2"]]
         }
     ], [
         {
@@ -37,7 +37,7 @@
             "job": "cow",
             "clue": "There are more innocents in column C than in any other column",
             "guilty": true,
-            "deps": ["A1"]
+            "deps": [["A1"]]
         }, {
             "id": "B2",
             "start": true,
@@ -46,7 +46,7 @@
             "job": "dragon",
             "clue": "Aaron is one of Beth's three innocent neighbours",
             "guilty": true,
-            "deps": []
+            "deps": [[]]
         }, {
             "id": "C2",
             "start": false,
@@ -55,7 +55,7 @@
             "job": "dragon",
             "clue": "Or maybe set insurance fires?",
             "guilty": false,
-            "deps": ["A1", "B2"]
+            "deps": [["A1", "B2"]]
         }
     ], [
         {
@@ -66,7 +66,7 @@
             "job": "",
             "clue": "You'd think that a guilty dragon would do smash-and grab raids...",
             "guilty": true,
-            "deps": ["A1"]
+            "deps": [["A1"]]
         }, {
             "id": "B3",
             "start": false,
@@ -75,7 +75,7 @@
             "job": "",
             "clue": "But actually, we're a crew of long-con confidence tricksters!",
             "guilty": true,
-            "deps": ["B1"]
+            "deps": [["B1"]]
         }, {
             "id": "C3",
             "start": false,
@@ -84,7 +84,7 @@
             "job": "vampire",
             "clue": "I've mortgaged my castle to invest in Ripov & Burnham, and I'm expecting a 400x return!",
             "guilty": false,
-            "deps": ["B1"]
+            "deps": [["B1"]]
         }
     ]
 ]

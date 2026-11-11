@@ -32,13 +32,26 @@ function accuse(guilt) {
         incorrect++;
         return;
     }
-    for (const dep of currentSuspect.deps) {
-        if (document.getElementById(dep).classList.contains('unknown')) {
-            document.getElementById('jaccuse').close();
-            document.getElementById('disallowed').showModal();
-            unjustified++;
-            return;
+    var justified = true;
+    for (const clause of currentSuspect.deps) {
+        console.log("Clause: " + clause)
+        justified = true;
+        for (const dep of clause) {
+            console.log("Dep: " + dep)
+            if (document.getElementById(dep).classList.contains('unknown')) {
+                justified = false;
+                break;
+            }
         }
+        if (justified) {
+            break;
+        }
+    }
+    if (!justified) {
+        document.getElementById('jaccuse').close();
+        document.getElementById('disallowed').showModal();
+        unjustified++;
+        return;
     }
     let card = document.getElementById(currentSuspect.id);
     card.classList.remove('unknown');
