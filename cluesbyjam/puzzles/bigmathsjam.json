@@ -92,7 +92,7 @@
             "job": "",
             "clue": "There are a prime number of criminals in row 4",
             "guilty": false,
-            "deps": [["A3", "A4", "C3"]]
+            "deps": [["A3", "A4", "C3"], ["A3", "C3", "D3"]]
         }, {
             "id": "C3",
             "start": false,
@@ -130,7 +130,7 @@
             "job": "",
             "clue": "Sometimes I'm made of hands",
             "guilty": true,
-            "deps": [["A3", "A4", "C3"]]
+            "deps": [["A3", "A4", "C3"], ["A4", "B3", "C4"]]
         }, {
             "id": "C4",
             "start": false,
@@ -148,7 +148,7 @@
             "job": "",
             "clue": "Sometimes I'm made of maths",
             "guilty": true,
-            "deps": [["A4", "B3", "B4", "C4"]]
+            "deps": [["A4", "B3", "C4"]]
         }
     ]
 ]
